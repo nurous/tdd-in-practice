@@ -2,4 +2,4 @@ Create New Environment
 Create New Project (src, pair_stairs, src/pair_stairs/templates)
  - Set Python Interpreter to ve/bin/python
 Get Default test to run
-
+Write first functional test
