@@ -15,6 +15,8 @@ class TestPairStairs(TestCase):
         self.driver.find_element(By.CSS_SELECTOR, '#add_programmers').click()
 
         # Assert Pair Stairs is displayed
+        self.assertEqual(self.driver.title, 'Pair Stairs')
+
         raise NotImplementedError("You still need to write this!")
 
     def tearDown(self):
