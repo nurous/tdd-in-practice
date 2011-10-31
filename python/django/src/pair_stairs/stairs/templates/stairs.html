@@ -6,7 +6,11 @@
 </head>
 <body>
 
-<div id="stairs"></div>
+<div id="stairs">
+    {% for programmer in programmers %}
+        {{ programmer.name }}
+    {% endfor %}
+</div>
 
 </body>
 </html>
