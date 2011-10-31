@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from pair_stairs.stairs.views import create_stairs
+from pair_stairs.stairs.views import *
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^create/', create_stairs),
+    url(r'^stairs/', view_stairs),
 )
