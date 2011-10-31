@@ -9,8 +9,11 @@ class TestPairStairs(TestCase):
         self.driver.get('http://localhost:8000/create')
         self.assertEqual(self.driver.title, "Create a new pair stair")
         # Enter Names
-        self.driver.find_element(By.CSS_SELECTOR, '#programmer_names')
+        element = self.driver.find_element(By.CSS_SELECTOR, '#programmer_names')
+        element.send_keys('Mickey Mouse')
         # Submit
+        self.driver.find_element(By.CSS_SELECTOR, '#add_programmers').click()
+
         # Assert Pair Stairs is displayed
         raise NotImplementedError("You still need to write this!")
 
