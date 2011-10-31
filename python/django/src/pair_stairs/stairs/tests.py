@@ -6,11 +6,10 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from django.test.client import Client
 
+class TestUrls(TestCase):
+    def test_should_render_page_to_create_new_pair_stairs(self):
+        response = Client().get('/create')
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+        self.assertEqual(response.status_code, 200)
