@@ -8,9 +8,16 @@ Replace this with more appropriate tests for your application.
 from django.test import TestCase
 from django.test.client import Client
 
-class TestUrls(TestCase):
+class TestCreatePairStairs(TestCase):
     def test_should_render_page_to_create_new_pair_stairs(self):
         response = Client().get('/create/')
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'create_stairs.html')
+
+    def test_should_redirect_to_stairs_after_submission(self):
+        response = Client().post('/create/', {'programmer_names': 'Mickey Mouse'})
+
+        self.assertRedirects(response, '/stairs/')
+
+
