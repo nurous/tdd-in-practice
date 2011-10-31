@@ -20,4 +20,10 @@ class TestCreatePairStairs(TestCase):
 
         self.assertRedirects(response, '/stairs/')
 
+    def test_should_render_pair_stairs(self):
+        response = Client().get('/stairs/')
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'stairs.html')
+
 
