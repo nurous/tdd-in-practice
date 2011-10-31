@@ -10,6 +10,6 @@ from django.test.client import Client
 
 class TestUrls(TestCase):
     def test_should_render_page_to_create_new_pair_stairs(self):
-        response = Client().get('/create')
+        response = Client().get('/create/')
 
         self.assertEqual(response.status_code, 200)
