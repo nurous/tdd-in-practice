@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response, redirect
 from django.template.context import RequestContext
 
 def view_stairs(request):
-    return HttpResponse()
+    return render_to_response('stairs.html', RequestContext(request))
 
 def create_stairs(request):
     if request.method == 'POST':
