@@ -17,7 +17,8 @@ class TestPairStairs(TestCase):
         self.assertEqual(self.driver.title, "Create a new pair stair")
         # Enter Names
         element = self.driver.find_element(By.CSS_SELECTOR, '#programmer_names')
-        element.send_keys('Mickey Mouse')
+        pair_names = ', '.join(['Mickey Mouse', 'Minnie Mouse'])
+        element.send_keys(pair_names)
         # Submit
         self.driver.find_element(By.CSS_SELECTOR, '#add_programmers').click()
 
@@ -26,6 +27,7 @@ class TestPairStairs(TestCase):
 
         stairs = self.driver.find_element(By.CSS_SELECTOR, '#stairs')
         self.assertIn('Mickey Mouse', stairs.text)
+        self.assertIn('Minnie Mouse', stairs.text)
         raise NotImplementedError("You still need to write this!")
 
     def tearDown(self):
