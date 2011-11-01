@@ -26,8 +26,8 @@ class TestPairStairs(TestCase):
         self.assertEqual(self.driver.title, 'Pair Stairs')
 
         stairs = self.driver.find_element(By.CSS_SELECTOR, '#stairs')
-        self.assertIn('Mickey Mouse', stairs.text)
-        self.assertIn('Minnie Mouse', stairs.text)
+        self.assertEqual('Mickey Mouse', self.driver.find_element(By.CSS_SELECTOR, '#programmer_1 .name').text)
+        self.assertEqual('Minnie Mouse', self.driver.find_element(By.CSS_SELECTOR, '#programmer_2 .name').text)
         raise NotImplementedError("You still need to write this!")
 
     def tearDown(self):
