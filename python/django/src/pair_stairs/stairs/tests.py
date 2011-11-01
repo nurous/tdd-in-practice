@@ -39,6 +39,12 @@ class TestCreatePairStairs(TestCase):
         for name in NAMES:
             self.assertEquals(Programmer.objects.filter(name = name).count(), 1, "Programmer '%s' not found" % name)
 
+    def test_should_recreate_stairs_each_time(self):
+        Client().post('/create/', {'programmer_names': format_names(NAMES)})
+        Client().post('/create/', {'programmer_names': format_names(NAMES)})
+
+        self.assertEqual(len(NAMES), Programmer.objects.count())
+
     def test_should_render_pair_stairs(self):
         response = Client().get('/stairs/')
 
