@@ -11,6 +11,7 @@ def view_stairs(request):
 def create_stairs(request):
     if request.method == 'POST':
         names = request.POST['programmer_names'].split(', ')
+        Programmer.objects.all().delete()
         for name in names:
             Programmer(name = name).save()
         return redirect(view_stairs)
