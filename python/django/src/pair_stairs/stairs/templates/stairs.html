@@ -8,7 +8,9 @@
 
 <div id="stairs">
     {% for programmer in programmers %}
-        {{ programmer.name }}
+        <div id="programmer_{{ forloop.counter }}">
+            <span class='name'>{{ programmer.name }}</span>
+        </div>
     {% endfor %}
 </div>
 
