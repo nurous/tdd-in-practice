@@ -29,6 +29,7 @@ class TestPairStairs(TestCase):
         self.assertEqual(2, len(self.driver.find_elements(By.CSS_SELECTOR, '.name')))
         self.assertEqual('Mickey Mouse', self.driver.find_element(By.CSS_SELECTOR, '#programmer_1 .name').text)
         self.assertEqual('Minnie Mouse', self.driver.find_element(By.CSS_SELECTOR, '#programmer_2 .name').text)
+        self.assertEqual(1, len(self.driver.find_elements(By.CSS_SELECTOR, '#programmer_1 .pair a')))
         raise NotImplementedError("You still need to write this!")
 
     def tearDown(self):
