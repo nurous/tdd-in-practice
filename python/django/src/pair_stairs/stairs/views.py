@@ -5,8 +5,10 @@ from django.template.context import RequestContext
 from pair_stairs.stairs.models import Programmer
 
 def view_stairs(request):
-    programmers = Programmer.objects.all()
-    return render_to_response('stairs.html', RequestContext(request, {'programmers': programmers}))
+    programmers = list(Programmer.objects.all())
+    return render_to_response('stairs.html', RequestContext(request,
+            {'programmers_for_columns': programmers[0:-1],
+             'programmers_for_rows': programmers[1:]}))
 
 def create_stairs(request):
     if request.method == 'POST':
