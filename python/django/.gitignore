@@ -4,3 +4,6 @@ ve/
 .idea/misc.xml
 .idea/workspace.xml
 *.pyc
+chromedriver.log
+dev.db
+commits.txt
