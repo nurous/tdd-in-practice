@@ -12,3 +12,11 @@ if [ ! -d 've' ]; then virtualenv ve; fi
 set +u
 source ve/bin/activate
 pip install -r requirements.pip
+
+if [ ! -f ve/bin/chromedriver ]; then
+  echo 'Installing Chrome WebDriver'
+  curl -O http://chromium.googlecode.com/files/chromedriver_mac_16.0.902.0.zip
+  unzip chromedriver_mac_16.0.902.0.zip
+  mv chromedriver ve/bin/
+  rm chromedriver_mac_16.0.902.0.zip
+fi
